@@ -127,10 +127,48 @@ section {
 .main .textBlock p {
     text-align: justify;
 }
-
-
 footer {
     max-width: 100%;
     margin: 0 auto;
     text-align: center;
+}
+#section4  .blockShiro  {
+    vertical-align: middle;
+
+}
+#section4 .blockShiro img {
+    cursor: pointer;
+}
+#section4 *   {
+      box-sizing: border-box;
+    }
+#section4 .slider {
+        width: 50%;
+        margin: 100px auto;
+    }
+#section4 .slick-slide {
+      margin: 0px 20px;
+    }
+#section4 .slick-slide img {
+      width: 100%;
+    }
+#section4 .slick-prev:before,
+#section4 .slick-next:before {
+      color: black;
+    }
+#section4 .slick-slide {
+      transition: all ease-in-out .3s;
+      opacity: .2;
+    }
+#section4 .slick-active {
+      opacity: .5;
+    }
+#section4 .slick-current {
+      opacity: 1;
+    }
+#section4 .slick-next {
+    right: 0;
+}
+#section4 .slick-prev {
+    left: 0;
 }
