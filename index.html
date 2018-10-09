@@ -8,7 +8,11 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <title>VS Fashion Show</title>
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    
+    <link rel="stylesheet" type="text/css" href="static/css/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="static/css/slick-theme.css"/>
+
     <link rel="stylesheet" type="text/css" href="static/css/fullpage.css" />
     <link rel="stylesheet" type="text/css" href="static/css/main.css">
     <!--[if IE]>
@@ -17,14 +21,13 @@
             </script>
         <![endif]-->
         <script type="text/javascript">
-              window.onload = function () {   
+            window.onload = function () {   
                 document.getElementById('btn-play').onclick = function (event){  
                   var audio = new Audio(); 
                   audio.src = 'static/audio/crya.mp3'; 
                   audio.autoplay = true; 
                 }   
               }
-              
         </script>
 </head>
 
@@ -42,7 +45,7 @@
                     </div>
                     <div class="item-sep"></div>
                     <div class="item">
-                        <a data-menuanchor="angels" href="#angels">Angels</a>
+                        <a data-menuanchor="shiro" href="#shiro">Shiro</a>
                     </div>
                 </div>
         </header>
@@ -76,7 +79,7 @@
                     </div>
             </section>
             <footer>
-                <!--<div class="copyriht"><span>© 2017-2018 A.V.Gibelgaus / SBI-211 / Victoria's Secret Fashion Show 2018. All Rights Reserved.</span></div> -->
+                <!-- <div class="copyriht"><span>© 2017-2018 A.V.Gibelgaus / SBI-211 / Victoria's Secret Fashion Show 2018. All Rights Reserved.</span></div> -->
                 <div class="links">
                     <a href="https://victoriassecret.com/">WebSite</a>
                 </div>
@@ -89,15 +92,47 @@
             Fashion show
         </div>
         <div class="section " id="section4">
-            Angels
+            <div class="blockShiro">
+                <div><img src="static/img/shiro5.jpg" alt="SHIRO"></div>
+                <div><img src="static/img/shiro1.jpg" alt="SHIRO"></div>
+                <div><img src="static/img/shiro2.jpg" alt="SHIRO"></div>
+                <div><img src="static/img/shiro3.jpg" alt="SHIRO"></div>
+                <div><img src="static/img/shiro4.jpg" alt="SHIRO"></div>
+            </div>
         </div>
     </div>
     <script type="text/javascript" src="static/js/fullpage.js"></script>
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="static/js/slick.min.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+       $('.blockShiro').slick({
+          centerMode: true,
+          centerPadding: '60px',
+          slidesToShow: 3,
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                arrows: true,
+                centerMode: true,
+                centerPadding: '40px',
+                slidesToShow: 1
+              }
+            }
+          ]
+        });
+    });
+    </script>
+
     <script type="text/javascript">
     var myFullpage = new fullpage('#fullpage', {
         menu: '#menu',
-        paddingTop: '89px',
-        anchors: ['first', 'second', 'gallery', 'fashion', 'angels'],
+        paddingTop: '88px',
+        anchors: ['first', 'second', 'gallery', 'fashion', 'shiro'],
         sectionsColor: ['#ffffff', '#ffffff', '#ffffff', '#ffffff']
     });
     </script>
