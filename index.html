@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Xompatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>VS Fashion Show</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="static/css/fullpage.css" />
+    <link rel="stylesheet" type="text/css" href="static/css/main.css">
+    <!--[if IE]>
+            <script type="text/javascript">
+                 var console = { log: function() {} };
+            </script>
+        <![endif]-->
+        <script type="text/javascript">
+            window.onload = function () {   
+                document.getElementById('btn-play').onclick = function (event){  
+                  var audio = new Audio(); 
+                  audio.src = 'static/audio/crya.mp3'; 
+                  audio.autoplay = true; 
+                }   
+              }
+        </script>
+</head>
+
+<body>
+    <div id="header">
+        <header>
+            <div class="logo"><a data-menuanchor="second" href="#second"><img src="static/img/logo-white.png"></a></div>
+                <div class="menu" id="menu">
+                    <div class="item">
+                        <a data-menuanchor="gallery" class="active" href="#gallery">Gallery</a>
+                    </div>
+                    <div class="item-sep"></div>
+                    <div class="item">
+                        <a data-menuanchor="fashion" href="#fashion">Fashion Show</a>
+                    </div>
+                    <div class="item-sep"></div>
+                    <div class="item">
+                        <a data-menuanchor="angels" href="#angels">Angels</a>
+                    </div>
+                </div>
+        </header>
+    </div>
+    <div id="fullpage">
+        <div class="section " id="section0">
+            <div class="btn-audio">
+                <img src="static/img/btn-audio.png" alt="Audio button" id="btn-play">
+                <audio src="static/audio/crya.mp3" autoplay="autoplay"></audio>
+            </div>
+        </div>
+        <div class="section" id="section1">
+            <h2>Victoria’s secret Fashion Show 2018</h2>
+            <section class="main">
+                    <div class="imgBlock">
+                        <img class="logoText" src="static/img/logoText.png">
+                    </div>
+                    <div class="textBlock">
+
+                        <p>The <strong>Victoria's Secret Fashion Show</strong> is an annual show sponsored by and featuring Victoria's Secret, a brand of lingerie and sleepwear. Victoria's Secret uses the show to promote and market its goods in high-profile settings. The show features some of the world's leading fashion models such as current Victoria's Secret Angels Adriana Lima, Behati Prinsloo, Candice Swanepoel, Lily Aldridge, Elsa Hosk, Jasmine Tookes, Josephine Skriver, Lais Ribeiro, Martha Hunt, Romee Strijd, Sara Sampaio, Stella Maxwell and Taylor Marie Hill.</p>
+                    </div>
+                    <div class="textBlock">
+                        <p>American network television broadcasts the show during prime time. The first few shows in the 1990s were held in the days preceding Valentine's Day to promote the brand for this holiday. They were not aired on national television. In 1999 and 2000 the show was webcast. Beginning in 2001, the shows were moved ahead of the Christmas holiday season. Also in 2001, the show made its network television broadcast debut on ABC, though in all subsequent years, it has been broadcast on CBS. The show has been held at a variety of locations in different cities including Miami, Los Angeles, Cannes, Paris, London and Shanghai. The first four shows were held at the Plaza Hotel in New York City, but since it has become a televised event it has most often been held at the 69th Regiment Armory in New York City.</p>
+                        
+                    </div>
+                    <div class="imgBlock">
+                        <img class="imgBig" src="static/img/about.jpg">
+                    </div>
+                    <div class="textBlock">
+                        <p>The show is a lavish event with elaborate costumed lingerie, varying music by leading entertainers, and set design according to the different themes running within the show. The show attracts hundreds of celebrities and entertainers, with special performers and acts every year. Each year, twenty to forty of the world's top fashion models are selected to perform in the fashion show. In a typical year, this includes about a half dozen women under contract to the company, known as Victoria's Secret Angels, who help publicize the event.</p>
+                    </div>
+            </section>
+            <footer>
+                <div class="copyriht"><span>© 2017-2018 A.V.Gibelgaus / SBI-211 / Victoria's Secret Fashion Show 2018. All Rights Reserved.</span></div>
+                <div class="links">
+                    <a href="https://victoriassecret.com/">WebSite</a>
+                </div>
+            </footer>
+        </div>
+        <div class="section " id="section2">
+            Gallery
+        </div>
+        <div class="section " id="section3">
+            Fashion show
+        </div>
+        <div class="section " id="section4">
+            Angels
+        </div>
+    </div>
+    <script type="text/javascript" src="static/js/fullpage.js"></script>
+    <script type="text/javascript">
+    var myFullpage = new fullpage('#fullpage', {
+        menu: '#menu',
+        paddingTop: '89px',
+        anchors: ['first', 'second', 'gallery', 'fashion', 'angels'],
+        sectionsColor: ['#ffffff', '#ffffff', '#ffffff', '#ffffff']
+    });
+    </script>
+</body>
+
+</html>
