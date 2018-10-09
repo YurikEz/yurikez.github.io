@@ -17,14 +17,13 @@
             </script>
         <![endif]-->
         <script type="text/javascript">
-              function MyFunc(event){
+              window.onload = function () {   
+                document.getElementById('btn-play').onclick = function (event){  
                   var audio = new Audio(); 
                   audio.src = 'static/audio/crya.mp3'; 
                   audio.autoplay = true; 
-               }
-                document.getElementById('btn-play').onclick = function (){  
-                  MyFunc()
                 }   
+              }
               
         </script>
 </head>
