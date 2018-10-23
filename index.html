@@ -5,7 +5,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>letusmake</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+	<script type="text/javascript">
+        window.onload = function () {   
+            document.getElementById('btn-play').onclick = function (event){  
+              var audio = new Audio(); 
+              audio.src = 'audio/crya.mp3'; 
+              audio.autoplay = true; 
+            }   
+          }
+    </script>
 </head>
+
 <body>
 	<div class="wrapper">
 		<header>
@@ -27,7 +38,7 @@
 			</div>
 			<div class="btn">
 				<a href=""></a>
-				<a href="#work"><img src="img/arrowbtn.png"></a>
+				<a href="" id="btn-play"><img src="img/arrowbtn.png"></a>
 			</div>
 		</div>
 		<main class="work" id="work">
