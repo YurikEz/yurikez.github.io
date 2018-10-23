@@ -6,7 +6,7 @@
 	<title>letusmake</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
-	<script type="text/javascript">
+	<script>
         window.onload = function () {   
             document.getElementById('btn-play').onclick = function (event){  
               var audio = new Audio(); 
@@ -19,155 +19,173 @@
 
 <body>
 	<div class="wrapper">
-		<header>
-			<a href="#" class="logo"><span>LØGØ</span></a>
-			<div class="menu">
-				<ul>
-					<li><a href="#work">Work</a></li>
-					<li><a href="#team">Team</a></li>
-					<li><a href="#contact">Contact</a></li>
+		<header class="header">
+			<a href="#" class="header__logo"><span class="header__logo-text">LØGØ</span></a>
+			<div class="header__menu">
+				<ul class="header__menu-list">
+					<li class="header__menu-list-item"><a href="#work" class="header__menu-list-item-link">Work</a></li>
+					<li class="header__menu-list-item"><a href="#team" class="header__menu-list-item-link">Team</a></li>
+					<li class="header__menu-list-item"><a href="#contact" class="header__menu-list-item-link">Contact</a></li>
 				</ul>
 			</div>
 		</header>
 		<div class="banner">
-			<div class="imgBanner"><!-- <img src="img/bg.jpg"> --></div>
-			<div class="titleBanner">
-				<h2>let us make</h2>
-				<h2>your lives easier</h2>
-				<span>We specialize in crafting awesome ideas for web, mobile and beyond.</span>
+			<div class="banner__image"></div>
+			<div class="banner__promise">
+				<h2 class="banner__promise-title">let us make</h2>
+				<h2 class="banner__promise-title">your lives easier</h2>
+				<span class="banner__promise-description">We specialize in crafting awesome ideas for web, mobile and beyond.</span>
 			</div>
-			<div class="btn">
-				<a href=""></a>
-				<a href="" id="btn-play"><img src="img/arrowbtn.png"></a>
-				<audio src="audio/crya.mp3" autoplay="autoplay"></audio>
+			<div class="banner__btn">
+				<a href="" class="banner__btn-backgroud"></a>
+				<a href="" id="btn-play" class="banner__btn-backgroud"><img src="img/arrowbtn.png" alt="" class="banner__btn-image"></a>
+				<audio src="audio/crya.mp3" autoplay="autoplay" class="banner__audio"></audio>
 			</div>
 		</div>
 		<main class="work" id="work">
-			<div class="description">
-				<h2>Featured work</h2>
-				<span class="underline"></span>
-				<span>Here you can find some of our latest works, to see the details of these works just click the thumbnails below.</span>
+			<div class="work__promise">
+				<h2 class="work__promise-title">Featured work</h2>
+				<span class="work__promise-underline"></span>
+				<span class="work__promise-description">Here you can find some of our latest works, to see the details of these works just click the thumbnails below.</span>
 			</div>
-			<div class="workplace">
-				<div class="item"><img src="img/work1.jpg" alt="work1"></div>
-				<div class="item"><img src="img/work2.jpg" alt="work2"></div>
-				<div class="item"><img src="img/work3.jpg" alt="work3"></div>
-				<div class="item"><img src="img/work4.jpg" alt="work4"></div>
-				<div class="item"><img src="img/work5.jpg" alt="work5"></div>
-				<div class="item"><img src="img/work6.jpg" alt="work6"></div>
-				<div class="item"><img src="img/work7.jpg" alt="work7"></div>
-				<div class="item"><img src="img/work8.jpg" alt="work8"></div>
-				<div class="item"><img src="img/work9.jpg" alt="work9"></div>
+			<div class="work__workplace">
+				<div class="work__workplace-item">
+					<img class="work__workplace-item-image" src="img/work1.jpg" alt="work1">
+				</div>
+				<div class="work__workplace-item">
+					<img class="work__workplace-item-image" src="img/work2.jpg" alt="work2">
+				</div>
+				<div class="work__workplace-item">
+					<img class="work__workplace-item-image" src="img/work3.jpg" alt="work3">
+				</div>
+				<div class="work__workplace-item">
+					<img class="work__workplace-item-image" src="img/work4.jpg" alt="work4">
+				</div>
+				<div class="work__workplace-item">
+					<img class="work__workplace-item-image" src="img/work5.jpg" alt="work5">
+				</div>
+				<div class="work__workplace-item">
+					<img class="work__workplace-item-image" src="img/work6.jpg" alt="work6">
+				</div>
+				<div class="work__workplace-item">
+					<img class="work__workplace-item-image" src="img/work7.jpg" alt="work7">
+				</div>
+				<div class="work__workplace-item">
+					<img class="work__workplace-item-image" src="img/work8.jpg" alt="work8">
+				</div>
+				<div class="work__workplace-item">
+					<img class="work__workplace-item-image" src="img/work9.jpg" alt="work9">
+				</div>
 			</div>
 		</main>
 		<div class="team" id="team">
-			<div class="description">
-				<h2>Team</h2>
-				<span class="underline"></span>
-				<span>We are a hard working group, who's aim is to listen to your problems and to come up with the best solution possible. We follow the lates trends on the web to create custom talierd niche websites.</span>
+			<div class="team__promise">
+				<h2 class="team__promise-title">Team</h2>
+				<span class="team__promise-underline"></span>
+				<span class="team__promise-description">We are a hard working group, who's aim is to listen to your problems and to come up with the best solution possible. We follow the lates trends on the web to create custom talierd niche websites.</span>
 			</div>
-			<div class="workplace">
-				<div class="item">
-					<div class="cardImg">
-						<div class="mate"></div>
+			<div class="team__workplace">
+				<div class="team__workplace-item">
+					<div class="team__workplace-item-card-mate">
+						<div class="team__workplace-item-card-mate-image"></div>
 					</div>
-					<h3>Name Surname</h3>
-					<span>Lead Developer</span>
-					<div class="iconsoc">
-						<div class="icon">
-							<a href="https://twitter.com/" class="twitter"></a>
+					<h3 class="team__workplace-item-name">Name Surname</h3>
+					<span class="team__workplace-item-position">Lead Developer</span>
+					<div class="team__workplace-item-social">
+						<div class="team__workplace-item-social-icon">
+							<a href="https://twitter.com/" class="team__workplace-item-social-icon-twitter"></a>
 						</div>
-						<div class="icon">
-							<a href="https://www.skype.com/" class="skype"></a>
+						<div class="team__workplace-item-social-icon">
+							<a href="https://www.skype.com/" class="team__workplace-item-social-icon-skype"></a>
 						</div>
-						<div class="icon">
-							<a href="https://linkedin.com/" class="linkedin"></a>
-						</div>
-					</div>
-				</div>
-				<div class="item">
-					<div class="cardImg">
-						<div class="mate"></div>
-					</div>
-					<h3>Name Surname</h3>
-					<span>Lead Designer</span>
-					<div class="iconsoc">
-						<div class="icon">
-							<a href="https://twitter.com/" class="twitter"></a>
-						</div>
-						<div class="icon">
-							<a href="https://dribbble.com/" class="dribbbel"></a>
-						</div>
-						<div class="icon">
-							<a href="https://www.skype.com/" class="skype"></a>
-						</div>
-						<div class="icon">
-							<a href="https://linkedin.com/" class="linkedin"></a>
+						<div class="team__workplace-item-social-icon">
+							<a href="https://linkedin.com/" class="team__workplace-item-social-icon-linkedin"></a>
 						</div>
 					</div>
 				</div>
-				<div class="item">
-					<div class="cardImg">
-						<div class="mate"></div>
+				<div class="team__workplace-item">
+					<div class="team__workplace-item-card-mate">
+						<div class="team__workplace-item-card-mate-image"></div>
 					</div>
-					<h3>Name Surname</h3>
-					<span>Marketing Director</span>
-					<div class="iconsoc">
-						<div class="icon">
-							<a href="https://www.skype.com/" class="skype"></a>
+					<h3 class="team__workplace-item-name">Name Surname</h3>
+					<span class="team__workplace-item-position">Lead Designer</span>
+					<div class="team__workplace-item-social">
+						<div class="team__workplace-item-social-icon">
+							<a href="https://twitter.com/" class="team__workplace-item-social-icon-twitter"></a>
 						</div>
-						<div class="icon">
-							<a href="https://linkedin.com/" class="linkedin"></a>
+						<div class="team__workplace-item-social-icon">
+							<a href="https://dribbble.com/" class="team__workplace-item-social-icon-dribbbel"></a>
+						</div>
+						<div class="team__workplace-item-social-icon">
+							<a href="https://www.skype.com/" class="team__workplace-item-social-icon-skype"></a>
+						</div>
+						<div class="team__workplace-item-social-icon">
+							<a href="https://linkedin.com/" class="team__workplace-item-social-icon-linkedin"></a>
 						</div>
 					</div>
 				</div>
-				<div class="item">
-					<div class="cardImg">
-						<div class="mate"></div>
+				<div class="team__workplace-item">
+					<div class="team__workplace-item-card-mate">
+						<div class="team__workplace-item-card-mate-image"></div>
 					</div>
-					<h3>Name Surname</h3>
-					<span>Business Director</span>
-					<div class="iconsoc">
-						<div class="icon">
-							<a href="https://www.skype.com/" class="skype"></a>
+					<h3 class="team__workplace-item-name">Name Surname</h3>
+					<span class="team__workplace-item-position">Marketing Director</span>
+					<div class="team__workplace-item-social">
+						<div class="team__workplace-item-social-icon">
+							<a href="https://www.skype.com/" class="team__workplace-item-social-icon-skype"></a>
 						</div>
-						<div class="icon">
-							<a href="https://linkedin.com/" class="linkedin"></a>
+						<div class="team__workplace-item-social-icon">
+							<a href="https://linkedin.com/" class="team__workplace-item-social-icon-linkedin"></a>
+						</div>
+					</div>
+				</div>
+				<div class="team__workplace-item">
+					<div class="team__workplace-item-card-mate">
+						<div class="team__workplace-item-card-mate-image"></div>
+					</div>
+					<h3 class="team__workplace-item-name">Name Surname</h3>
+					<span class="team__workplace-item-position">Business Director</span>
+					<div class="team__workplace-item-social">
+						<div class="team__workplace-item-social-icon">
+							<a href="https://www.skype.com/" class="team__workplace-item-social-icon-skype"></a>
+						</div>
+						<div class="team__workplace-item-social-icon">
+							<a href="https://linkedin.com/" class="team__workplace-item-social-icon-linkedin"></a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="contact" id="contact">
-			<div class="description">
-				<h2>Contact</h2>
-				<span class="underline"></span>
-				<span></span>
+			<div class="contact__promise">
+				<h2 class="contact__promise-title">Contact</h2>
+				<span class="contact__promise-underline"></span>
+				<span class="contact__promise-description"></span>
 			</div>
-			<div class="info-contact">
-				<div class="map">
-					<h3>Where are we located?</h3>
-					<div class="location">
-						<div class="mapImg"></div>
+			<div class="contact__workplace">
+				<div class="contact__workplace-map">
+					<h3 class="contact__workplace-map-title">Where are we located?</h3>
+					<div class="contact__workplace-map-location">
+						<div class="contact__workplace-map-location-image"></div>
 					</div>
 				</div>
-				<div class="fos">
-					<h3>Want to contact us now? Just drop us a line below.</h3>
-					<textarea wrap="off" placeholder="Leave us a message..."></textarea>
-					<div class="buttons">
-						<input type="email" placeholder="your@mail.com" name="email">
-						<input type="submit" name="send" value="send">
+				<div class="contact__workplace-fos">
+					<h3 class="contact__workplace-fos-title">Want to contact us now? Just drop us a line below.</h3>
+					<textarea class="contact__workplace-fos-textarea" placeholder="Leave us a message..."></textarea>
+					<div class="contact__workplace-fos-buttons">
+						<input class="contact__workplace-fos-buttons-input-type-email" type="email" placeholder="your@mail.com" name="email">
+						<input class="contact__workplace-fos-buttons-input-type-submit" type="submit" name="send" value="send">
 					</div>	
 				</div>
 			</div>
 		</div>
-		<footer>
-			<div class="footer">
-				<div class="adress">
-					<p><span>Adress:</span> Ahmet Bayman Caddesi No:8, Seyrantepe - Istanbul</p>
+		<footer class="footer">
+			<div class="footer__info">
+				<div class="footer__info-adress">
+					<p class="footer__info-adress-text"><span class="color_telegray">Adress:</span> Ahmet Bayman Caddesi No:8, Seyrantepe - Istanbul</p>
 				</div>
-				<div class="copyright">
-					<p>Copyright © 2013 Limbo</p>
+				<div class="footer__info-copyright">
+					<p class="footer__info-copyright-text">Copyright © 2013 Limbo</p>
 				</div>
 			</div>
 		</footer>
