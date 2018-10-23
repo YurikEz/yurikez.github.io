@@ -946,4 +946,9 @@ body
     {
         display: block;
     }
+
+    .header__menu-list-item-link:hover
+    {
+        color: #a7a7a7;
+    }
 }
