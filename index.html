@@ -172,11 +172,11 @@
 				</div>
 				<div class="contact__workplace-fos">
 					<h3 class="contact__workplace-fos-title">Хотите связаться с нами сейчас?  <nobr>Просто напишите нам ниже.</nobr></h3>
-					<form class="contact__form-communication">
-						<textarea class="contact__workplace-fos-textarea" placeholder="Оставьте нам сообщение ..."></textarea>
+					<form class="contact__form-communication" id="fos">
+						<textarea class="contact__workplace-fos-textarea" placeholder="Оставьте нам сообщение ..." id="message"></textarea>
 						<div class="contact__workplace-fos-buttons">
-							<input class="contact__workplace-fos-buttons-input-type-email" type="email" placeholder="your@mail.com" name="email">
-							<input class="contact__workplace-fos-buttons-input-type-submit" type="submit" name="send" value="send">
+							<input class="contact__workplace-fos-buttons-input-type-email" type="email" placeholder="your@mail.com" name="email" autocomplete="off" id="email">
+							<input class="contact__workplace-fos-buttons-input-type-submit" type="button" name="send" value="send" id="send">
 						</div>
 					</form>
 				</div>

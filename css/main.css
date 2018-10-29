@@ -19,12 +19,12 @@ body {
     display: -ms-grid;
     display: grid;
 
-    grid-template-areas:    'header header header'
-                            'banner banner banner'
-                            'work work work'
-                            'team team team'
-                            'contact contact contact'
-                            'footer footer footer';
+    grid-template-areas: 'header header header'
+        'banner banner banner'
+        'work work work'
+        'team team team'
+        'contact contact contact'
+        'footer footer footer';
     -ms-grid-columns: (1fr)[3];
     grid-template-columns: repeat(3, 1fr);
     -ms-grid-rows: 80px 500px 920px (1fr)[2] 80px;
@@ -216,8 +216,8 @@ body {
     -ms-grid-column: 1;
     -ms-grid-column-span: 3;
     grid-area: work;
-    grid-template-areas:    'description description description'
-                            'workplace workplace workplace';
+    grid-template-areas: 'description description description'
+        'workplace workplace workplace';
     justify-content: center;
     align-items: center;
     -ms-grid-columns: 1fr 1fr 1fr;
@@ -408,8 +408,9 @@ body {
     height: 80px;
     margin: 1px auto;
 
-    border-radius: 50px;
     transition: .5s;
+
+    border-radius: 50px;
 }
 
 .team__workplace-item:nth-child(1) .team__workplace-item-card-mate-image {
@@ -460,6 +461,7 @@ body {
 }
 
 .team__workplace-item-position {
+    font-size: .8rem;
     font-style: italic;
 
     display: block;
@@ -468,8 +470,6 @@ body {
     padding: 10px 0;
 
     text-align: center;
-
-    font-size: 0.8rem;
 }
 
 .team__workplace-item-social {
@@ -631,17 +631,18 @@ body {
 }
 
 .contact__workplace-map-location-image {
+    overflow: hidden;
+
     width: 280px;
     height: 280px;
-    overflow: hidden;
 }
 
 .contact__workplace-fos {
     display: -ms-grid;
     display: grid;
 
-    grid-template-areas:    'title title'
-                            'form form';
+    grid-template-areas: 'title title'
+        'form form';
     -ms-grid-rows: 71.6px 290px;
     grid-template-rows: 71.6px 290px;
     align-items: self-start;
@@ -663,8 +664,8 @@ body {
     display: -ms-grid;
     display: grid;
 
-    grid-template-areas:    'textarea textarea'
-                            'buttons buttons';
+    grid-template-areas: 'textarea textarea'
+        'buttons buttons';
     -ms-grid-rows: 231px 38px;
     grid-template-rows: 231px 38px;
     -ms-grid-row: 2;
@@ -684,11 +685,17 @@ body {
 
     resize: none;
 
+    border: 2px solid #a9a9a9;
     background-color: #f2f2f2;
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
     grid-area: textarea;
+}
+
+.contact__workplace-fos-textarea:focus {
+    border: 2px solid rgb(77, 144, 254);
+    outline: none;
 }
 
 .contact__workplace-fos-buttons {
@@ -701,11 +708,17 @@ body {
 }
 
 .contact__workplace-fos-buttons-input-type-email {
+    box-sizing: border-box;
     width: 300px;
     padding: 20px;
 
-    border: 1px solid #a9a9a9;
+    border: 2px solid #a9a9a9;
     background-color: #f2f2f2;
+}
+
+.contact__workplace-fos-buttons-input-type-email:focus {
+    border: 2px solid rgb(77, 144, 254);
+    outline: none;
 }
 
 .contact__workplace-fos-buttons-input-type-submit {
