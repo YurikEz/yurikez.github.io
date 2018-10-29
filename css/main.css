@@ -29,7 +29,6 @@ body {
     grid-template-columns: repeat(3, 1fr);
     -ms-grid-rows: 80px 500px 920px (1fr)[2] 80px;
     grid-template-rows: 80px 500px 920px repeat(2, 1fr) 80px;
-    /*grid-row-gap: 1.5em;*/
 }
 
 .header {
@@ -221,7 +220,6 @@ body {
                             'workplace workplace workplace';
     justify-content: center;
     align-items: center;
-    /*    grid-template-rows: 1fr 1fr 0.05fr;*/
     -ms-grid-columns: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     grid-row-gap: 2em;
@@ -358,7 +356,7 @@ body {
 
     display: block;
 
-    max-width: 470px;
+    max-width: 540px;
     padding: 30px 10px 0;
 
     text-align: center;
@@ -411,26 +409,47 @@ body {
     margin: 1px auto;
 
     border-radius: 50px;
+    transition: .5s;
 }
 
 .team__workplace-item:nth-child(1) .team__workplace-item-card-mate-image {
-    background-image: url(../img/mate1.jpg);
-    background-position: -10px -7px;
+    background-image: url(../img/team/mate-1-bw.jpg);
+    background-position: -10px -22px;
+}
+
+.team__workplace-item:nth-child(1) .team__workplace-item-card-mate-image:hover {
+    background-image: url(../img/team/mate-1.jpg);
+    background-position: -10px -22px;
 }
 
 .team__workplace-item:nth-child(2) .team__workplace-item-card-mate-image {
-    background-image: url(../img/mate2.jpg);
+    background-image: url(../img/team/mate-2-bw.jpg);
+    background-position: 0 0;
+}
+
+.team__workplace-item:nth-child(2) .team__workplace-item-card-mate-image:hover {
+    background-image: url(../img/team/mate-2.jpg);
     background-position: 0 0;
 }
 
 .team__workplace-item:nth-child(3) .team__workplace-item-card-mate-image {
-    background-image: url(../img/mate3.jpg);
+    background-image: url(../img/team/mate-3-bw.jpg);
+    background-position: -8px -11px;
+}
+
+.team__workplace-item:nth-child(3) .team__workplace-item-card-mate-image:hover {
+    background-image: url(../img/team/mate-3.jpg);
     background-position: -8px -11px;
 }
 
 .team__workplace-item:nth-child(4) .team__workplace-item-card-mate-image {
-    background-image: url(../img/mate4.jpg);
-    background-position: -23px 0;
+    background-image: url(../img/team/mate-4-bw.jpg);
+    background-position: -6px -10px;
+}
+
+.team__workplace-item:nth-child(4) .team__workplace-item-card-mate-image:hover {
+    background-image: url(../img/team/mate-4.jpg);
+    background-position: -6px -10px;
 }
 
 .team__workplace-item-name {
@@ -449,6 +468,8 @@ body {
     padding: 10px 0;
 
     text-align: center;
+
+    font-size: 0.8rem;
 }
 
 .team__workplace-item-social {
@@ -470,11 +491,11 @@ body {
     cursor: pointer;
     transition: .5s;
 
-    background-image: url(../img/twitter.png);
+    background-image: url(../img/icon/twitter.png);
 }
 
 .team__workplace-item-social-icon-twitter:hover {
-    background-image: url(../img/twitter-hover.png);
+    background-image: url(../img/icon/twitter-hover.png);
 }
 
 .team__workplace-item-social-icon-dribbbel {
@@ -486,11 +507,11 @@ body {
     cursor: pointer;
     transition: .5s;
 
-    background-image: url(../img/dribbbel.png);
+    background-image: url(../img/icon/dribbbel.png);
 }
 
 .team__workplace-item-social-icon-dribbbel:hover {
-    background-image: url(../img/dribbbel-hover.png);
+    background-image: url(../img/icon/dribbbel-hover.png);
 }
 
 .team__workplace-item-social-icon-skype {
@@ -502,11 +523,11 @@ body {
     cursor: pointer;
     transition: .5s;
 
-    background-image: url(../img/skype.png);
+    background-image: url(../img/icon/skype.png);
 }
 
 .team__workplace-item-social-icon-skype:hover {
-    background-image: url(../img/skype-hover.png);
+    background-image: url(../img/icon/skype-hover.png);
 }
 
 .team__workplace-item-social-icon-linkedin {
@@ -518,11 +539,11 @@ body {
     cursor: pointer;
     transition: .5s;
 
-    background-image: url(../img/linkedin.png);
+    background-image: url(../img/icon/linkedin.png);
 }
 
 .team__workplace-item-social-icon-linkedin:hover {
-    background-image: url(../img/linkedin-hover.png);
+    background-image: url(../img/icon/linkedin-hover.png);
 }
 
 .contact {
@@ -612,8 +633,7 @@ body {
 .contact__workplace-map-location-image {
     width: 280px;
     height: 280px;
-
-    background-image: url(../img/map.jpg);
+    overflow: hidden;
 }
 
 .contact__workplace-fos {
@@ -700,7 +720,7 @@ body {
 
     color: white;
     border: 1px solid #6995a9;
-    background: #6995a9 url(../img/icon-button.png) 30% 43% no-repeat;
+    background: #6995a9 url(../img/icon/icon-button.png) 30% 43% no-repeat;
 }
 
 .contact__workplace-fos-buttons-input-type-submit:hover {
@@ -845,7 +865,7 @@ body {
     }
 
     .contact__workplace-fos-buttons-input-type-submit {
-        background: #6995a9 url(../img/icon-button.png) 20% 43% no-repeat;
+        background: #6995a9 url(../img/icon/icon-button.png) 20% 43% no-repeat;
     }
 }
 
