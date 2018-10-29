@@ -49,14 +49,24 @@ window.onload = function() {
 		let email = document.getElementById("email");
 		let send = document.getElementById("send");
 
-		let reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+		let message_error = document.getElementById("message_error");
+		let email_error = document.getElementById("email_error");
+
+
+		let reg_email = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+		let reg_message = /^[а-яА-ЯёЁa-zA-Z0-9_\-\.\!\,\?]+$/;
 
 		if (item == message) {
 			message.oninput = function() {
 				if (message.value.length == 0) {
 					message.style.border = "";
+					message_error.style.display = "";
+				} else if (reg_message.test(message.value) == false) {
+					message.style.border = "2px solid red";
+					message_error.style.display = "block";
 				} else {
 					message.style.border = "2px solid #6DB65B";
+					message_error.style.display = "";
 				}	
 			};
 		}
@@ -64,10 +74,13 @@ window.onload = function() {
 			email.oninput = function() {
 				if (email.value.length == 0) {
 					email.style.border = "";
-				} else if (reg.test(email.value) == false) {
+					email_error.style.display = "";
+				} else if (reg_email.test(email.value) == false) {
 					email.style.border = "2px solid red";
+					email_error.style.display = "block";
 				} else {
 					email.style.border = "2px solid #6DB65B";
+					email_error.style.display = "";
 				}
 			};
 		}
@@ -77,12 +90,8 @@ window.onload = function() {
 				// убираем стандартное поведение
 				e.preventDefault();
 
-				if (reg.test(email.value) == true) {
-					if (message.value.length == 0) {
-						alert('Оставте нам сообщение');
-					} else {
-						alert('Сообщение отправлено!');
-					}
+				if (reg_email.test(email.value) == true && reg_message.test(message.value) == true) {
+					alert('Сообщение отправлено!');
 				} else {
 					alert('Заполните все поля');
 				}

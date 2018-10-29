@@ -673,6 +673,7 @@ body {
     -ms-grid-column-span: 2;
     grid-area: form;
     align-items: self-start;
+    position: relative;
 }
 
 .contact__workplace-fos-textarea {
@@ -698,6 +699,14 @@ body {
     outline: none;
 }
 
+.contact__workplace-fos-error-message {
+    display: none;
+    position: absolute;
+    top: 205px;
+    font-size: 10px;
+    color: red;
+}
+
 .contact__workplace-fos-buttons {
     display: flex;
     -ms-grid-row: 2;
@@ -719,6 +728,14 @@ body {
 .contact__workplace-fos-buttons-input-type-email:focus {
     border: 2px solid rgb(77, 144, 254);
     outline: none;
+}
+
+.contact__workplace-fos-error-email {
+    display: none;
+    position: absolute;
+    top: 215px;
+    font-size: 10px;
+    color: red;
 }
 
 .contact__workplace-fos-buttons-input-type-submit {
