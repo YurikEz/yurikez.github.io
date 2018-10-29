@@ -305,6 +305,125 @@ body {
     max-width: 260px;
 }
 
+.work__workplace-modal {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: none;
+
+    margin: auto;
+
+    transition: .7s;
+
+    background: rgba(0, 0, 0, .8);
+    /*display: grid;*/
+
+    align-items: center;
+    justify-content: center;
+}
+
+.work__workplace-modal-prev {
+    font-size: 2.5rem;
+
+    position: absolute;
+    left: 2%;
+
+    display: -ms-grid;
+
+    display: grid;
+
+    width: 25px;
+    height: 80px;
+
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: .7s;
+
+    color: white;
+    border-radius: 25px;
+
+    align-items: center;
+}
+
+.work__workplace-modal-prev:hover {
+    background: #4f4f4f;
+}
+
+.work__workplace-modal-box-image {
+    max-width: 1080px;
+}
+
+.work__workplace-modal-image {
+    max-width: 100%;
+}
+
+.work__workplace-modal-next {
+    font-size: 2.5rem;
+
+    position: absolute;
+    right: 2%;
+
+    display: -ms-grid;
+
+    display: grid;
+
+    width: 25px;
+    height: 80px;
+
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: .7s;
+
+    color: white;
+    border-radius: 25px;
+
+    align-items: center;
+}
+
+.work__workplace-modal-next:hover {
+    background: #4f4f4f;
+}
+
+.work__workplace-modal-close {
+    font-size: 2.5rem;
+
+    position: absolute;
+    top: 2%;
+    right: 2%;
+
+    display: -ms-grid;
+
+    display: grid;
+
+    width: 50px;
+    height: 50px;
+
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: .7s;
+
+    color: white;
+    border-radius: 25px;
+
+    align-items: center;
+}
+
+.work__workplace-modal-close:hover {
+    background: #4f4f4f;
+}
 
 .team {
     width: 100%;
@@ -661,6 +780,8 @@ body {
 }
 
 .contact__form-communication {
+    position: relative;
+
     display: -ms-grid;
     display: grid;
 
@@ -673,7 +794,6 @@ body {
     -ms-grid-column-span: 2;
     grid-area: form;
     align-items: self-start;
-    position: relative;
 }
 
 .contact__workplace-fos-textarea {
@@ -700,10 +820,13 @@ body {
 }
 
 .contact__workplace-fos-error-message {
-    display: none;
+    font-size: 10px;
+
     position: absolute;
     top: 205px;
-    font-size: 10px;
+
+    display: none;
+
     color: red;
 }
 
@@ -731,10 +854,13 @@ body {
 }
 
 .contact__workplace-fos-error-email {
-    display: none;
+    font-size: 10px;
+
     position: absolute;
     top: 215px;
-    font-size: 10px;
+
+    display: none;
+
     color: red;
 }
 
