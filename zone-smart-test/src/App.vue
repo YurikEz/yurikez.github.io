@@ -40,7 +40,6 @@
   import axios from 'axios'
   import Loading from './components/Loading'
 
-
   export default {
     name: 'cApp',
     components: {
@@ -93,7 +92,6 @@
         this.loading = true
         let selectedID = event.target.value
         if (selectedID === 'none') {
-          // reset
           this.category = undefined
           this.aspect = undefined
           this.loading = false

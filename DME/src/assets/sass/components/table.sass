@@ -1,0 +1,69 @@
+#table
+  table
+    border-spacing: 0
+    border-collapse: collapse
+    margin: 1rem auto
+    text-align: center
+    th
+      border: 1px solid  $grey
+      padding: 1rem
+      cursor: default
+      transition: .7s
+      user-select: none
+      &.name, &.date
+        &:hover
+          color: $white
+          background-color: $primary
+          cursor: pointer
+          .order
+            filter: invert(1)
+      &.active
+        color: $white
+        background-color: $primary
+        &:hover
+          background-color: $secondary
+        .order
+          filter: invert(1)
+      .title-wrapper
+        display: flex
+        align-items: center
+        justify-content: space-around
+        min-width: 200px
+        .order
+          display: inline-block
+          width: 16px
+          height: 16px
+          margin: 0 0 0 auto
+          transition: .7s
+          &.asc
+            background-image: url(../img/arrow.png)
+            background-size: contain
+          &.desc
+            background-image: url(../img/arrow.png)
+            background-size: contain
+            transform: rotate(-180deg)
+    td
+      border: 1px solid  $grey
+      padding: 1rem
+      img
+        margin: 0 auto
+        user-select: none
+      .button
+        max-width: 300px
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: .5rem 1rem
+        background-color: $primary
+        margin: 0 auto 1rem
+        user-select: none
+        transition: .7s
+        &:hover
+          background-color: $secondary
+          cursor: pointer
+        span
+          color: $white
+          font-size: 14px
+          letter-spacing: .65px
+          font-weight: bold

@@ -1,0 +1,78 @@
+#detail
+  margin: 0
+  padding: 0
+  position: fixed
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  background: rgba(0,0,0,.5)
+  opacity: 1
+  z-index: 100
+  pointer-events: auto
+  display: flex
+  align-items: center
+  .detail-wrapper
+    width: 100%
+    max-width: 500px
+    position: relative
+    z-index: 100
+    background: #fff
+    padding: 1rem
+    margin: auto
+    transform: scale(.9) translateY(-32px)
+    border-radius: 5px
+    .detail-info
+      display: flex
+      align-items: center
+      justify-content: space-around
+      .detail-avatar
+        position: relative
+        overflow: hidden
+        width: 128px
+        height: 128px
+        border-radius: 50%
+        user-select: none
+        transition: .7s
+        &:hover
+          cursor: pointer
+          box-shadow: 0 0 25px rgba(0,0,0,0.7)
+        img
+          position: absolute
+          top: 50%
+          left: 50%
+          transform: translate(-50%, -50%)
+          width: 128px
+          height: 128px
+          border-radius: 50%
+          transition: .5s
+          object-fit: cover
+      .detail-contact
+        .detail-field
+          margin: 1rem 0
+          .detail-field__label
+            font-weight: bold
+            cursor: default
+          span
+            cursor: text
+    .detail-actions
+      margin: 1rem auto
+      .button
+        max-width: 300px
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: .5rem 1rem
+        background-color: $primary
+        margin: 0 auto
+        user-select: none
+        transition: .7s
+        &:hover
+          background-color: $secondary
+          cursor: pointer
+        span
+          color: $white
+          font-size: 14px
+          letter-spacing: .65px
+          font-weight: bold
