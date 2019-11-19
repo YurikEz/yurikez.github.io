@@ -42,6 +42,7 @@
     },
     props: {},
     computed: {
+      // Отображаем вычесляемые свойства
       detailProfile() {
         return this.$store.getters.getDetailProfile
       }
@@ -50,6 +51,7 @@
     created() {},
     mounted() {},
     methods: {
+      // Метод, который передает в родителя event, что бы закрыть модальное окно
       closeDetail() {
         this.$emit('closeDetail', false)
       }
