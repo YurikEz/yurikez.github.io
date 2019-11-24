@@ -42,9 +42,7 @@
         pickSchedule: [],
         pagination: [],
         selectedPage: 0,
-        stepPagination: 5,
-        startArr: 0,
-        endArr: 0
+        stepPagination: 5
       }
     },
     props: {},
