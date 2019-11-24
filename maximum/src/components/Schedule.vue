@@ -65,6 +65,7 @@
     watch: {
       selectedCourse() {
         this.pagination = []
+        this.selectedPage = 0
 
         this.$store.dispatch("SelectedSchedule", this.schedule.filter(item  => {
           return item.courseId === this.selectedCourse
