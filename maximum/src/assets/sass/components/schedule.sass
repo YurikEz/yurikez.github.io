@@ -1,0 +1,54 @@
+#schedule
+  max-width: 1280px
+  width: 100%
+  margin: 0 auto
+  h2
+    text-transform: uppercase
+    text-align: center
+    margin: 1rem auto
+  table
+    border-spacing: 0
+    border-collapse: collapse
+    margin: 1rem auto
+    text-align: center
+    th
+      border: 1px solid  $grey
+      padding: 1rem
+      cursor: default
+      transition: .7s
+      user-select: none
+    td
+      border: 1px solid  $grey
+      padding: 1rem
+  .pagination
+    max-width: 300px
+    width: 100%
+    margin: 0 auto
+    display: flex
+    align-items: center
+    justify-content: space-around
+    .button
+      margin: 0 1rem 1rem
+  .button
+    max-width: 300px
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: .5rem 1rem
+    background-color: $primary
+    margin: 0 auto 1rem
+    user-select: none
+    transition: .7s
+    &:hover
+      background-color: $secondary
+      cursor: pointer
+    &.active
+      background-color: $secondary
+      &:hover
+        background-color: $primary
+    span
+      color: $white
+      font-size: 14px
+      letter-spacing: .65px
+      font-weight: bold
