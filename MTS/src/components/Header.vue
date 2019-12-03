@@ -32,10 +32,10 @@
           <span></span>
         </div>
         <div class="header-mobile-menu-dropdown-wrapper">
-          <a href="#" class="header-mobile-menu-dropdown__item">Menu 1</a>
-          <a href="#" class="header-mobile-menu-dropdown__item">Menu 1</a>
-          <a href="#" class="header-mobile-menu-dropdown__item">Menu 1</a>
-          <a href="#" class="header-mobile-menu-dropdown__item">Menu 1</a>
+          <a href="#" class="header-mobile-menu-dropdown__item">Menu item 1</a>
+          <a href="#" class="header-mobile-menu-dropdown__item">Menu item 2</a>
+          <a href="#" class="header-mobile-menu-dropdown__item">Menu item 3</a>
+          <a href="#" class="header-mobile-menu-dropdown__item">Menu item 4</a>
         </div>
       </div>
     </div>
