@@ -1,0 +1,84 @@
+#banner
+  padding: 30px 1rem 0
+  background-color: $lightGrey
+  .banner-wrapper
+    .banner-promise
+      h3
+        font-size: 1rem
+        line-height: 19px
+        margin: 0 auto 1rem
+      h1
+        font-weight: 700
+        font-size: 2rem
+        line-height: 40px
+        text-transform: uppercase
+        margin: 0 auto 1.5rem
+      .banner__button
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        max-width: 220px
+        background: $red
+        margin: 0 0 2rem
+        border-radius: 5px
+        text-decoration: none
+        span
+          padding: .5rem 0
+          width: 100%
+          font-size: 1rem
+          line-height: 19px
+          text-align: center
+          color: $white
+        &:hover
+          cursor: pointer
+    .banner__image
+      img
+@media only screen and (min-width : 768px)
+  #banner
+    padding: 54px 2rem 0
+    .banner-wrapper
+      display: flex
+      align-items: center
+      justify-content: space-between
+      .banner-promise
+        max-width: 500px
+        width: 100%
+        h3
+          font-size: 20px
+          line-height: 28px
+        h1
+          font-size: 2rem
+          line-height: 40px
+        .banner__button
+          span
+            font-size: 21px
+            line-height: 30px
+          &:hover
+      .banner__image
+        img
+@media only screen and (min-width : 1024px)
+  #banner
+    padding: 70px 5rem 0
+    .banner-wrapper
+      .banner-promise
+        h3
+          font-size: 1.5rem
+          line-height: 2rem
+        h1
+          font-size: 50px
+          line-height: 55px
+        .banner__button
+          span
+          &:hover
+      .banner__image
+        img
+@media only screen and (min-width : 1368px)
+  #banner
+    .banner-wrapper
+      .banner-promise
+        h1
+        .banner__button
+          span
+          &:hover
+      .banner__image
+        img
