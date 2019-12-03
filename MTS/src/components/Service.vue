@@ -82,51 +82,81 @@
         }, {
           idNav: 1,
           logo: 'logo',
-          title: 'Голосовой робот',
-          text: '',
-          value: ''
+          title: 'Проверка контрагентов',
+          text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi numquam, architecto animi harum reiciendis iste rerum cum dolorum ipsum tenetur, molestiae quidem! Repellat, aliquam.',
+          value: '<span class="service-product__price">от <span>XXX XXX</span> ₽</span>'
         }, {
           idNav: 1,
           logo: 'logo',
-          title: 'МТС Коммуникатор',
-          text: '',
-          value: ''
+          title: 'Конструктор документов',
+          text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi numquam, architecto animi harum reiciendis iste rerum cum dolorum ipsum tenetur, molestiae quidem! Repellat, aliquam.',
+          value: '<span class="service-product__price">от <span>XXX XXX</span> ₽</span>'
         }, {
           idNav: 1,
           logo: 'logo',
-          title: 'Цифровой ассистент',
-          text: '',
-          value: ''
-        }, {
-          idNav: 1,
-          logo: 'logo2',
-          title: 'Push for site',
-          text: '',
-          value: ''
+          title: 'CRM Простой бизнес',
+          text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi numquam, architecto animi harum reiciendis iste rerum cum dolorum ipsum tenetur, molestiae quidem! Repellat, aliquam.',
+          value: '<span class="service-product__price">от <span>XXX XXX</span> ₽</span>'
         }, {
           idNav: 1,
           logo: 'logo',
-          title: 'Голосовой робот',
-          text: '',
-          value: ''
+          title: 'Анализ геоданных',
+          text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi numquam, architecto animi harum reiciendis iste rerum cum dolorum ipsum tenetur, molestiae quidem! Repellat, aliquam.',
+          value: '<span class="service-product__price">от <span>XXX XXX</span> ₽</span>'
         }, {
           idNav: 1,
           logo: 'logo',
-          title: 'МТС Коммуникатор',
-          text: '',
-          value: ''
+          title: 'Видеонаблюдение (Larga)',
+          text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi numquam, architecto animi harum reiciendis iste rerum cum dolorum ipsum tenetur, molestiae quidem! Repellat, aliquam.',
+          value: '<span class="service-product__price">от <span>XXX XXX</span> ₽</span>'
         }, {
           idNav: 1,
           logo: 'logo',
-          title: 'Цифровой ассистент',
-          text: '',
-          value: ''
+          title: 'Мобильные сотрудники',
+          text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi numquam, architecto animi harum reiciendis iste rerum cum dolorum ipsum tenetur, molestiae quidem! Repellat, aliquam.',
+          value: '<span class="service-product__price">от <span>XXX XXX</span> ₽</span>'
         }, {
-          idNav: 1,
-          logo: 'logo2',
-          title: 'Push for site',
-          text: '',
-          value: ''
+          idNav: 2,
+          logo: 'logo',
+          title: 'Антивирус Касперского',
+          text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi numquam, architecto animi harum reiciendis iste rerum cum dolorum ipsum tenetur, molestiae quidem! Repellat, aliquam.',
+          value: '<span class="service-product__price">от <span>XXX XXX</span> ₽</span>'
+        }, {
+          idNav: 2,
+          logo: 'logo',
+          title: 'Антивирус eset',
+          text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi numquam, architecto animi harum reiciendis iste rerum cum dolorum ipsum tenetur, molestiae quidem! Repellat, aliquam.',
+          value: '<span class="service-product__price">от <span>XXX XXX</span> ₽</span>'
+        }, {
+          idNav: 2,
+          logo: 'logo',
+          title: 'Aнтивирус doctorweb',
+          text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi numquam, architecto animi harum reiciendis iste rerum cum dolorum ipsum tenetur, molestiae quidem! Repellat, aliquam.',
+          value: '<span class="service-product__price">от <span>XXX XXX</span> ₽</span>'
+        }, {
+          idNav: 2,
+          logo: 'logo',
+          title: 'MDM',
+          text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi numquam, architecto animi harum reiciendis iste rerum cum dolorum ipsum tenetur, molestiae quidem! Repellat, aliquam.',
+          value: '<span class="service-product__price">от <span>XXX XXX</span> ₽</span>'
+        }, {
+          idNav: 3,
+          logo: 'logo',
+          title: 'CRM простой бизнес',
+          text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi numquam, architecto animi harum reiciendis iste rerum cum dolorum ipsum tenetur, molestiae quidem! Repellat, aliquam.',
+          value: '<span class="service-product__price">от <span>XXX XXX</span> ₽</span>'
+        }, {
+          idNav: 3,
+          logo: 'logo',
+          title: 'Видеонаблюдение',
+          text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi numquam, architecto animi harum reiciendis iste rerum cum dolorum ipsum tenetur, molestiae quidem! Repellat, aliquam.',
+          value: '<span class="service-product__price">от <span>XXX XXX</span> ₽</span>'
+        }, {
+          idNav: 3,
+          logo: 'logo',
+          title: 'Виртуальный сервер',
+          text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi numquam, architecto animi harum reiciendis iste rerum cum dolorum ipsum tenetur, molestiae quidem! Repellat, aliquam.',
+          value: '<span class="service-product__price">от <span>XXX XXX</span> ₽</span>'
         }]
       }
     },
