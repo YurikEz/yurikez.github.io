@@ -1,5 +1,8 @@
 <template>
-  <div id="app">
+  <div v-if="targetIE" id="app">
+    <h2>Вы в IE, скачайте более современный браузер</h2>
+  </div>
+  <div v-else id="app">
     <Header />
     <Main />
     <Footer />
@@ -20,12 +23,21 @@
       Footer
     },
     data() {
-      return {}
+      return {
+        targetIE: false
+      }
     },
     props: {},
     computed: {},
     watch: {},
-    created() {},
+    created() {
+      if (navigator.userAgent === 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E)' || navigator.userAgent === 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E)') {
+        // Вычисляем ie
+        this.targetIE = true
+      } else {
+        this.targetIE = false
+      }
+    },
     mounted() {},
     methods: {}
   }
