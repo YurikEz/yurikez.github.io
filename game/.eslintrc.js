@@ -5,8 +5,7 @@ module.exports = {
   },
   'extends': [
     'plugin:vue/essential',
-    // 'eslint:recommended',
-    '@vue/prettier'
+    // '@vue/prettier'
   ],
   rules: {
     'no-console': 'off',
