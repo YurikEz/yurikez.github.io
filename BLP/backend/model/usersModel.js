@@ -25,7 +25,6 @@ const getUsers = () => {
           ...item,
           login: decrypt(item.login),
           password: decrypt(item.password),
-          access: decrypt(item.access),
         };
       }));
     });
@@ -44,7 +43,6 @@ const checkingAuth = (body) => {
           ...item,
           login: decrypt(item.login),
           password: decrypt(item.password),
-          access: decrypt(item.access),
         };
       });
 
@@ -69,7 +67,7 @@ const createUser = (body) => {
   return new Promise(function (resolve, reject) {
     const { login, password, access } = body;
 
-    pool.query('INSERT INTO users (login, password, access) VALUES ($1, $2, $3) RETURNING *', [encrypt(login), encrypt(password), encrypt(parseInt(access))], (error, results) => {
+    pool.query('INSERT INTO users (login, password, access) VALUES ($1, $2, $3) RETURNING *', [encrypt(login), encrypt(password), parseInt(access)], (error, results) => {
       if (error) {
         reject(error);
       }
@@ -79,7 +77,6 @@ const createUser = (body) => {
           ...item,
           login: decrypt(item.login),
           password: decrypt(item.password),
-          access: decrypt(item.access),
         };
       }));
     });
@@ -88,7 +85,7 @@ const createUser = (body) => {
 const updateUser = (body) => {
   return new Promise(function (resolve, reject) {
     const { login, password, access, id } = body;
-    pool.query('UPDATE users SET login = $2, password = $3, access = $4 WHERE id = $1 RETURNING *', [id, encrypt(login), encrypt(password), encrypt(parseInt(access))], (error, results) => {
+    pool.query('UPDATE users SET login = $2, password = $3, access = $4 WHERE id = $1 RETURNING *', [id, encrypt(login), encrypt(password), parseInt(access)], (error, results) => {
       if (error) {
         reject(error);
       }
@@ -98,7 +95,6 @@ const updateUser = (body) => {
           ...item,
           login: decrypt(item.login),
           password: decrypt(item.password),
-          access: decrypt(item.access),
         };
       }));
     });

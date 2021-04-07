@@ -19,10 +19,7 @@ app.get('/', (req, res) => res.status(200).send('Hello World!'));
 
 app.post('/auth', (req, response) => {
   usersModel.checkingAuth(req.body)
-    .then(data => {
-      console.log(data);
-      return response.status(200).send(data)
-    })
+    .then(data => response.status(200).send(data))
     .catch(error => response.status(500).send(error));
 });
 
