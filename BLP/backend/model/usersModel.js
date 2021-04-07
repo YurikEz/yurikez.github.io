@@ -1,8 +1,7 @@
 require('dotenv').config();
 const { pool } = require('./connectDb');
 const NodeRSA = require('node-rsa');
-
-const key = new NodeRSA({b: 512});
+const key = new NodeRSA(process.env.RSAKEY);
 
 function encrypt(text) {
   return key.encrypt(text, 'base64', 'utf8');
