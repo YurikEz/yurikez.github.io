@@ -30,7 +30,7 @@ app.get('/users', (req, response) => {
 });
 
 app.post('/users', (req, response) => {
-  usersModel.createUser(req.query)
+  usersModel.createUser(req.body)
     .then(data => response.status(200).send(data))
     .catch(error => response.status(500).send(error));
 });
