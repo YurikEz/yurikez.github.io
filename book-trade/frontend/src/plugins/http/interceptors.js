@@ -15,7 +15,7 @@ export default (http, store, router) => {
        * messages can be changed on app/Providers/EventServiceProvider.php
        */
       if ([401, 400].indexOf(response.status) > -1) {
-        router.push({ name: 'auth' });
+        router.push({ name: 'bookTrade' });
       } else if (response.status === 403) {
         console.log('403');
       } else if (response.status === 500) {
