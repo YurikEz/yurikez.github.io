@@ -1,19 +1,20 @@
 <script>
 export default {
-  name: 'book-trade',
+  name: 'BTAuth',
   props: {},
   data() {
     return {};
   },
   computed: {},
   methods: {}
-}
+};
 </script>
 
 <template>
   <div>
+    BTAuth
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 </style>

@@ -5,10 +5,25 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    name: 'bookTrade',
-    path: '/',
-    component: () => import('../app/main'),
+    name: 'auth',
+    path: '/auth',
+    component: () => import('../app/auth/main'),
   },
+  {
+    name: 'booktrade',
+    path: '/',
+    component: () => import('../app/booktrade/main'),
+  },
+  {
+    name: 'about',
+    path: '/about',
+    component: () => import('../app/about/main'),
+  },
+  {
+    name: 'profile',
+    path: '/profile',
+    component: () => import('../app/profile/main'),
+  }
 ];
 
 const router = new VueRouter({
