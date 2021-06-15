@@ -36,6 +36,7 @@ export default {
     margin: 0 1rem 0 0;
   }
 }
+
 .support__link {
   text-decoration: none;
   color: var(--linkText);

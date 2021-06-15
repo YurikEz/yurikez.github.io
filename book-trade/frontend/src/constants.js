@@ -13,25 +13,13 @@ export const MENU = [
   },
 ];
 
-export const SOCIALS = [
-  {
-    id: 1,
-    name: 'vk',
+export const TAGS = {
+  1: {
+    label: 'Бесплатно',
+    additionalClass: 'book__tag--green',
   },
-  {
-    id: 2,
-    name: 'facebook',
+  2: {
+    label: 'Обмен',
+    additionalClass: 'book__tag--blue',
   },
-  {
-    id: 3,
-    name: 'instagram',
-  },
-  {
-    id: 4,
-    name: 'twitter',
-  },
-  {
-    id: 5,
-    name: 'tiktok',
-  },
-];
+};

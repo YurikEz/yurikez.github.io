@@ -1,24 +1,50 @@
 <script>
 import BTButton from '../common/button/BTButton';
+import { TAGS } from '../../constants';
 
 export default {
   name: 'booktrade',
   components: {
     BTButton,
   },
-  props: {},
+  props: {
+    isAdmin: {
+      type: Boolean,
+      default: false,
+    },
+    isAuth: {
+      type: Boolean,
+      default: false,
+    },
+    currentUser: {
+      type: Object,
+      default: () => ({}),
+    },
+    books: {
+      type: Array,
+      default: () => [],
+    },
+  },
   data() {
     return {};
   },
-  computed: {},
+  computed: {
+    TAGS() {
+      return TAGS;
+    },
+  },
   methods: {
-    handleAddBook() {
+    handleOpenAddBook() {
+      this.$emit('open-add-book', { userId: this.currentUser.id });
     },
-    handleTakeBook() {
+    handleBooking(id) {
+      this.$emit('booking', { id });
     },
-    handleEditBook() {
+    handleOpenEditBook(payload) {
+      this.$emit('open-edit-book', payload);
     },
-    handleDeleteBook() {
+    handleOpenDeleteBook(payload) {
+      this.$emit('open-delete-book', payload);
     },
   }
 };
@@ -31,17 +57,19 @@ export default {
         <h1>Книгообмен</h1>
         <h3>Здесь можно оставить свою книгу</h3>
         <b-t-button
+          v-if="isAuth"
+          additionalClass="fill"
           text="Оставить книгу"
-          @click="handleAddBook"
+          @click="handleOpenAddBook"
         />
       </div>
     </section>
-    <section>
+    <section v-if="books.length">
       <h2>Нас можно забрать уже сегодня</h2>
       <div class="booktrade__wrapper">
         <div
-          v-for="index in 15"
-          :key="index"
+          v-for="({ id, image, name, author, tags, userId, booked }) in books"
+          :key="id"
           class="book__inner"
         >
           <div class="book">
@@ -49,13 +77,16 @@ export default {
               <img
                 class="book__image"
                 src="~@/assets/img/default-book.jpg"
-                alt="Cover book"
+                :alt="image.alt"
               >
-              <div class="book__image-controls">
+              <div
+                v-if="userId === currentUser.id || isAdmin"
+                class="book__image-controls"
+              >
                 <button
                   class="book__button book__button--orange"
                   type="button"
-                  @click.prevent="handleEditBook"
+                  @click.prevent="handleOpenEditBook({ id })"
                 >
                   <img
                     class="book__button-icon"
@@ -66,7 +97,7 @@ export default {
                 <button
                   class="book__button book__button--red"
                   type="button"
-                  @click.prevent="handleDeleteBook"
+                  @click.prevent="handleOpenDeleteBook({ id, name })"
                 >
                   <img
                     class="book__button-icon"
@@ -76,15 +107,25 @@ export default {
                 </button>
               </div>
             </div>
-            <h5 class="book__title">Название книги</h5>
-            <p class="book__author">Автор книги</p>
+            <h5 class="book__title">{{ name }}</h5>
+            <p class="book__author">{{ author }}</p>
             <div class="book__tags">
-              <div class="book__tag book__tag--green">Бесплатно</div>
-              <div class="book__tag book__tag--blue">Обмен</div>
+              <div
+                v-for="tag in tags.map(tagId => TAGS[tagId])"
+                :key="tag.label"
+                :class="[
+                  tag.additionalClass,
+                  'book__tag',
+                ]"
+              >
+                {{ tag.label }}
+              </div>
             </div>
             <b-t-button
-              text="Забрать :)"
-              @click="handleTakeBook"
+              v-if="isAuth && !booked"
+              additionalClass="fill"
+              text="Забронировать :)"
+              @click="handleBooking(id)"
             />
           </div>
         </div>
@@ -119,15 +160,6 @@ export default {
   
   section {
     margin: 2rem auto;
-  }
-  
-  .b-t-button {
-    width: 100%;
-    margin: 1rem auto;
-    text-transform: uppercase;
-    background-color: var(--linkText);
-    color: var(--white);
-    border-radius: 5px;
   }
 }
 
@@ -164,6 +196,7 @@ export default {
 
 .book {
   max-width: calc(var(--defaultWidth) / 5);
+  padding-bottom: 1rem;
 }
 
 .book__image {
@@ -201,6 +234,7 @@ export default {
     opacity: 0.7;
   }
 }
+
 .book__button-icon {
   max-width: 16px;
   width: 100%;
@@ -221,6 +255,7 @@ export default {
   align-items: center;
   justify-content: flex-start;
   gap: 1rem;
+  min-height: 30px;
 }
 
 .book__tag {

@@ -10,6 +10,10 @@ export default {
       type: String,
       default: '',
     },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
   },
   methods: {
     handleClickButton() {
@@ -26,6 +30,7 @@ export default {
       'b-t-button',
     ]"
     type="button"
+    :disabled="disabled"
     @click.prevent="handleClickButton"
   >
     <span>{{ text }}</span>
@@ -44,9 +49,39 @@ export default {
   transition: opacity 0.2s ease-in-out;
   will-change: opacity;
   
+  &.fill {
+    width: 100%;
+    margin: 1rem auto;
+    text-transform: uppercase;
+    background-color: var(--linkText);
+    color: var(--white);
+    border-radius: 5px;
+  }
+  
+  &.background-red {
+    background-color: var(--red);
+    border-color: var(--red);
+  }
+  
+  &.background-blue {
+    background-color: var(--blue);
+    border-color: var(--blue);
+  }
+  
+  &.background-grey {
+    background-color: var(--grey);
+    border-color: var(--grey);
+  }
+  
   &:hover,
   &:focus-within {
     opacity: 0.7;
+  }
+  
+  &[disabled] {
+    color: var(--footerText);
+    border-color: var(--footerText);
+    cursor: not-allowed;
   }
 }
 </style>

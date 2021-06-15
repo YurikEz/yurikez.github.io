@@ -42,7 +42,13 @@ export default {
       @click.prevent="handleToggleProfile"
     >
       <div class="profile__label">
-        <span class="profile__lastname">{{ currentUser.lastname }}</span>
+        <span
+          v-if="currentUser.lastName === null && currentUser.name === null"
+          class="profile__login"
+        >
+          {{ currentUser.login }}
+        </span>
+        <span class="profile__lastName">{{ currentUser.lastName }}</span>
         <span class="profile__name">{{ currentUser.name }}</span>
       </div>
       <img
@@ -158,6 +164,7 @@ export default {
   gap: 1rem;
   width: 100%;
 }
+
 .profile__label {
   display: flex;
   align-items: center;

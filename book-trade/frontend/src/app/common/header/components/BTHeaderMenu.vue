@@ -42,7 +42,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.menu {}
+.menu {
+}
 
 .menu__list {
   list-style: none;
@@ -54,7 +55,8 @@ export default {
   padding: 0;
 }
 
-.menu__item {}
+.menu__item {
+}
 
 .menu__link {
   text-decoration: none;

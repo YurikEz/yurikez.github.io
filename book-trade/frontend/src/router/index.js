@@ -5,24 +5,19 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    name: 'auth',
-    path: '/auth',
-    component: () => import('../app/auth/main'),
-  },
-  {
     name: 'booktrade',
     path: '/',
-    component: () => import('../app/booktrade/main'),
+    component: () => import('../app/booktrade/Main'),
   },
   {
     name: 'about',
     path: '/about',
-    component: () => import('../app/about/main'),
+    component: () => import('../app/about/Main'),
   },
   {
     name: 'profile',
     path: '/profile',
-    component: () => import('../app/profile/main'),
+    component: () => import('../app/profile/Main'),
   }
 ];
 

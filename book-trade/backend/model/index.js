@@ -1,7 +1,7 @@
-// const usersModel = require('./usersModel');
-// const postsModel = require('./postsModel');
+const usersModel = require('./usersModel');
+const booksModel = require('./booksModel');
 
 module.exports = {
-  // usersModel,
-  // postsModel,
+  usersModel,
+  booksModel,
 };
