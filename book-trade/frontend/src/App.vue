@@ -7,10 +7,6 @@ import BTFooter from './app/common/footer/BTFooter';
 import { MENU } from './constants';
 
 // Релиз 1
-// TODO: Сделать профиль
-// TODO: В профиле дать возможность смотреть свои книги
-// TODO: В профиле дать возможность смотреть забронированные книги
-// TODO: В профиле дать возможность смотреть полученные книги
 // TODO: Добавить функционал для разбронирования книги
 // TODO: Написать функционал для того, что бы забрать книгу
 // TODO: Написать функционал, который скрывает размещенные пользователем книги (те если я разместил книгу, то я ее не вижу в общем списке)
@@ -97,7 +93,14 @@ export default {
       localStorage.setItem('currentUser', null);
     },
     handleRegister(payload) {
-      this.register(payload).then(() => this.$refs.modal.handleCloseModal());
+      this.register(payload).then(() => {
+        this.$refs.modal.handleCloseModal();
+        this.$notify({
+          title: 'Регистрация прошла успешно',
+          type: 'success',
+          position: 'bottom-right',
+        });
+      });
     },
     handleForgetPassword(payload) {
       this.forgetPassword(payload);

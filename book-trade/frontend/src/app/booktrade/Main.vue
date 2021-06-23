@@ -40,6 +40,9 @@ export default {
     handleBooking(id) {
       this.$emit('booking', { id });
     },
+    handleTaken(id) {
+      this.$emit('taken', { id });
+    },
     handleOpenEditBook(payload) {
       this.$emit('open-edit-book', payload);
     },
@@ -68,7 +71,7 @@ export default {
       <h2>Нас можно забрать уже сегодня</h2>
       <div class="booktrade__wrapper">
         <div
-          v-for="({ id, image, name, author, tags, userId, booked }) in books"
+          v-for="({ id, image, name, author, tags, userId, booked, taken }) in books"
           :key="id"
           class="book__inner"
         >
@@ -121,12 +124,32 @@ export default {
                 {{ tag.label }}
               </div>
             </div>
-            <b-t-button
-              v-if="isAuth && !booked"
-              additionalClass="fill"
-              text="Забронировать :)"
-              @click="handleBooking(id)"
-            />
+            
+            <div class="book__control">
+              <template v-if="isAuth">
+                <b-t-button
+                  v-if="userId !== currentUser.id && !booked && !taken"
+                  additionalClass="fill"
+                  text="Забронировать :)"
+                  @click="handleBooking(id)"
+                />
+    
+                <b-t-button
+                  v-else-if="userId !== currentUser.id && booked && !taken && currentUser.booking !== null &&
+                  currentUser.booking.includes(id)"
+                  additionalClass="fill"
+                  text="Забрать"
+                  @click="handleTaken(id)"
+                />
+    
+                <b-t-button
+                  v-else-if="booked && !taken"
+                  additionalClass="fill"
+                  disabled
+                  text="Забранированно"
+                />
+              </template>
+            </div>
           </div>
         </div>
       </div>
@@ -197,6 +220,9 @@ export default {
 .book {
   max-width: calc(var(--defaultWidth) / 5);
   padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .book__image {
@@ -243,10 +269,11 @@ export default {
 .book__title {
   margin: 0 auto;
   font-size: 1rem;
+  flex: 1 0 auto;
 }
 
 .book__author {
-  margin: 0.5rem auto;
+  margin: 0.5rem 0;
   font-size: 0.75rem;
 }
 
@@ -270,5 +297,9 @@ export default {
   &--blue {
     background-color: dodgerblue;
   }
+}
+
+.book__control {
+  min-height: 65px;
 }
 </style>

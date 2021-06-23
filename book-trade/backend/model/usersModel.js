@@ -82,7 +82,11 @@ const getCurrentUser = (body) => {
           reject(error);
         }
 
-        user[0].roles = user[0].roles.map(roleId => roles.rows.find(({ id }) => id === roleId).name);
+        if (user[0].roles !== null ) {
+          user[0].roles = user[0].roles.map(roleId => roles.rows.find(({ id }) => id === roleId).name);
+        } else {
+          user[0].roles = [];
+        }
 
         resolve(user);
       });

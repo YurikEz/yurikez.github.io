@@ -82,6 +82,7 @@ export default {
     color: var(--footerText);
     border-color: var(--footerText);
     cursor: not-allowed;
+    background-color: transparent;
   }
 }
 </style>

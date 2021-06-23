@@ -93,9 +93,17 @@ const deleteBook = (body) => {
           reject(error);
         }
 
-        books = users.rows[0].books.filter(item => item !== id);
-        booking = users.rows[0].booking.filter(item => item !== id);
-        takeBooks = users.rows[0].take_books.filter(item => item !== id);
+        if (users.rows[0].books !== null ) {
+          books = users.rows[0].books.filter(item => item !== id);
+        }
+
+        if (users.rows[0].booking !== null ) {
+          booking = users.rows[0].booking.filter(item => item !== id);
+        }
+
+        if (users.rows[0].take_books !== null ) {
+          takeBooks = users.rows[0].take_books.filter(item => item !== id);
+        }
 
         pool.query('UPDATE users SET books = $2, booking = $3, take_books = $4 WHERE id = $1 RETURNING *',
           [user_id, books, booking, takeBooks], (error, results) => {
