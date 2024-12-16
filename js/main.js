@@ -1,24 +1,16 @@
 function initVK() {
-	console.log('initVK');
+	const currentApiId = prompt("Введите VK apiId");
 	VK.init({
-		apiId: 52847556
+		apiId: currentApiId
 	});
 }
 
-function getGroups() {
-	console.log('getGroups');
-	VK.Api.call('groups.getById', {group_id: 61085083, v:"5.199"}, function(r) {
+function getPhotosAllComments() {
+	const idGroup = prompt("Введите ID сообщества");
+	const idAlbum = prompt("Введите ID альбома");
+	VK.Api.call('photos.getAllComments', {owner_id: idGroup, album_id: idAlbum,  v:"5.199"}, function(r) {
 		if(r.response) {
 		  console.log(r.response);
-		}
-	});
-}
-
-function getUser() {
-	console.log('getUser');
-	VK.Api.call('users.get', {user_ids: 162193407, v:"5.199"}, function(r) {
-		if(r.response) {
-			console.log('Привет, ' + r.response[0].first_name);
 		}
 	});
 }
