@@ -24,6 +24,10 @@ function getUser() {
 }
 
 window.onload = function() {
+
+	document.getElementById('myButton').addEventListener('click', initVK());
+	document.getElementById('myButton').addEventListener('click', getGroups());
+	document.getElementById('myButton').addEventListener('click', getUser());
 // START smooth link
 	// собираем все якоря; устанавливаем время анимации и количество кадров
 	const anchors = [].slice.call(document.querySelectorAll('a[href*="#"]')),
