@@ -7,7 +7,7 @@ function initVK() {
 
 function getGroups() {
 	console.log('getGroups');
-	VK.Api.call('groups.getById', {group_id: 61085083, v:"5.73"}, function(r) {
+	VK.Api.call('groups.getById', {group_id: 61085083, v:"5.199"}, function(r) {
 		if(r.response) {
 		  console.log(r.response);
 		}
@@ -16,7 +16,7 @@ function getGroups() {
 
 function getUser() {
 	console.log('getUser');
-	VK.Api.call('users.get', {user_ids: 162193407, v:"5.73"}, function(r) {
+	VK.Api.call('users.get', {user_ids: 162193407, v:"5.199"}, function(r) {
 		if(r.response) {
 			console.log('Привет, ' + r.response[0].first_name);
 		}
@@ -24,10 +24,6 @@ function getUser() {
 }
 
 window.onload = function() {
-
-	document.getElementById('initVK').addEventListener('click', initVK);
-	document.getElementById('getGroups').addEventListener('click', getGroups);
-	document.getElementById('getUser').addEventListener('click', getUser);
 // START smooth link
 	// собираем все якоря; устанавливаем время анимации и количество кадров
 	const anchors = [].slice.call(document.querySelectorAll('a[href*="#"]')),
