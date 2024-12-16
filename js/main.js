@@ -1,4 +1,15 @@
 window.onload = function() {	
+	VK.init({
+		apiId: 52847556
+	  });
+
+	  VK.Api.call('groups.getById', {group_id: 61085083, v:"5.73"}, function(r) {
+		if(r.response) {
+		  alert('Привет, ' + r.response[0].first_name);
+		}
+	  });
+
+
 
 // START smooth link
 	// собираем все якоря; устанавливаем время анимации и количество кадров
