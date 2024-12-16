@@ -5,7 +5,13 @@ window.onload = function() {
 
 	  VK.Api.call('groups.getById', {group_id: 61085083, v:"5.73"}, function(r) {
 		if(r.response) {
-		  alert('Привет, ' + r.response[0].first_name);
+		  console.log(r.response);
+		}
+	  });
+
+	  VK.Api.call('users.get', {user_ids: 162193407, v:"5.73"}, function(r) {
+		if(r.response) {
+			console.log('Привет, ' + r.response[0].first_name);
 		}
 	  });
 
