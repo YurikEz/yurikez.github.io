@@ -1,10 +1,12 @@
 function initVK() {
+	console.log('initVK');
 	VK.init({
 		apiId: 52847556
 	});
 }
 
 function getGroups() {
+	console.log('getGroups');
 	VK.Api.call('groups.getById', {group_id: 61085083, v:"5.73"}, function(r) {
 		if(r.response) {
 		  console.log(r.response);
@@ -13,6 +15,7 @@ function getGroups() {
 }
 
 function getUser() {
+	console.log('getUser');
 	VK.Api.call('users.get', {user_ids: 162193407, v:"5.73"}, function(r) {
 		if(r.response) {
 			console.log('Привет, ' + r.response[0].first_name);
