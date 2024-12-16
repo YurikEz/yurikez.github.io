@@ -1,22 +1,26 @@
-window.onload = function() {	
+function initVK() {
 	VK.init({
 		apiId: 52847556
-	  });
+	});
+}
 
-	  VK.Api.call('groups.getById', {group_id: 61085083, v:"5.73"}, function(r) {
+function getGroups() {
+	VK.Api.call('groups.getById', {group_id: 61085083, v:"5.73"}, function(r) {
 		if(r.response) {
 		  console.log(r.response);
 		}
-	  });
+	});
+}
 
-	  VK.Api.call('users.get', {user_ids: 162193407, v:"5.73"}, function(r) {
+function getUser() {
+	VK.Api.call('users.get', {user_ids: 162193407, v:"5.73"}, function(r) {
 		if(r.response) {
 			console.log('Привет, ' + r.response[0].first_name);
 		}
-	  });
+	});
+}
 
-
-
+window.onload = function() {
 // START smooth link
 	// собираем все якоря; устанавливаем время анимации и количество кадров
 	const anchors = [].slice.call(document.querySelectorAll('a[href*="#"]')),
