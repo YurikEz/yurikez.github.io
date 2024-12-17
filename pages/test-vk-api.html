@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Xompatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>TEST VK API</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<!-- <script src="https://vk.com/js/api/openapi.js?169" type="text/javascript"></script> -->
+	<script src="https://unpkg.com/@vkid/sdk@<3.0.0/dist-sdk/umd/index.js"></script>
+</head>
+
+<script type="text/javascript">
+	if ('VKIDSDK' in window) {
+		const VKID = window.VKIDSDK;
+		// const currentApiId = prompt("Введите VK apiId");
+
+		VKID.Config.init({
+			app: 52847556, // currentApiId
+			redirectUrl: 'https://yurikez.github.io',
+			responseMode: VKID.ConfigResponseMode.Callback,
+			source: VKID.ConfigSource.LOWCODE,
+			scope: '', // Заполните нужными доступами по необходимости
+		});
+
+		const oneTap = new VKID.OneTap();
+
+		oneTap.render({
+			container: document.currentScript.parentElement,
+			showAlternativeLogin: true
+		})
+			.on(VKID.WidgetEvents.ERROR, vkidOnError)
+			.on(VKID.OneTapInternalEvents.LOGIN_SUCCESS, function (payload) {
+				const code = payload.code;
+				const deviceId = payload.device_id;
+
+				VKID.Auth.exchangeCode(code, deviceId)
+					.then(vkidOnSuccess)
+					.catch(vkidOnError);
+			});
+
+		function vkidOnSuccess(data) {
+			// Обработка полученного результата
+		}
+
+		function vkidOnError(error) {
+			// Обработка ошибки
+		}
+
+		function getPhotosAllComments() {
+			// const idGroup = prompt("Введите ID сообщества");
+			// const idAlbum = prompt("Введите ID альбома");
+			// 61085083_302122455
+			VK.Api.call('photos.getAllComments', { owner_id: 61085083, album_id: 302122455, v: "5.199" }, function (r) {
+				if (r.response) {
+					console.log(r.response);
+				}
+			});
+		}
+	}
+</script>
+
+<body>
+	<button type="button" onclick="getPhotosAllComments()">getPhotosAllComments</button>
+</body>
+
+</html>
