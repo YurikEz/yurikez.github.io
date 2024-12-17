@@ -9,7 +9,8 @@
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<script src="js/main.js"></script>
-	<script src="https://vk.com/js/api/openapi.js?169" type="text/javascript"></script>
+	<!-- <script src="https://vk.com/js/api/openapi.js?169" type="text/javascript"></script> -->
+	<script src="https://unpkg.com/@vkid/sdk@<3.0.0/dist-sdk/umd/index.js"></script>
 </head>
 
 <body>
@@ -47,9 +48,12 @@
 						class="banner__btn-image"></a>
 			</div>
 		</div>
-		<main class="work" id="work">
+		<div>
 			<button type="button" onclick="initVK()">init</button>
 			<button type="button" onclick="getPhotosAllComments()">getPhotosAllComments</button>
+		</div>
+		<main class="work" id="work">
+
 			<div class="work__promise">
 				<h2 class="work__promise-title">Наши работы</h2>
 				<span class="work__promise-underline"></span>

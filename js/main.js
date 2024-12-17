@@ -1,8 +1,47 @@
+function randomString(i) {
+    var rnd = '';
+    while (rnd.length < i) 
+        rnd += Math.random().toString(36).substring(2);
+    return rnd.substring(0, i);
+};
+
+function handleError() {
+	console.log('handleError');
+}
+
+function onSuccessHandler() {
+	console.log('onSuccessHandler');
+}
+
 function initVK() {
 	const currentApiId = prompt("Введите VK apiId");
-	VK.init({
-		apiId: currentApiId
-	});
+
+	VKID.Config.init({
+		app: currentApiId, // Идентификатор приложения.
+		redirectUrl: 'https://yurikez.github.io/', // Адрес для перехода после авторизации.
+		state: 'flowers', // Произвольная строка состояния приложения.
+		// codeVerifier: randomString('1'), // Параметр в виде случайной строки. Обеспечивает защиту передаваемых данных.
+		scope: 'email phone photos', // Список прав доступа, которые нужны приложению.
+	  });
+	// VK.init({
+	// 	apiId: currentApiId
+	// });
+
+	// Создание экземпляра шторки.
+const floatingOneTap = new VKID.FloatingOneTap();
+
+// Отрисовка шторки в контейнере с именем приложения APP_NAME, светлой темой и на русском языке.
+floatingOneTap.render({ appName: 'flowers', scheme: VKID.Scheme.LIGHT, lang: VKID.Languages.RUS })
+			.on(VKID.WidgetEvents.ERROR, handleError)
+			.on(VKID.FloatingOneTapInternalEvents.LOGIN_SUCCESS, function (payload) {
+				console.log('LOGIN_SUCCESS')
+				const code = payload.code;
+				const deviceId = payload.device_id;
+			
+				VKID.Auth.exchangeCode(code, deviceId)
+				.then(onSuccessHandler)
+				.catch(handleError);
+			});
 }
 
 function getPhotosAllComments() {
