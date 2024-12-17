@@ -11,63 +11,62 @@
 	<script src="https://unpkg.com/@vkid/sdk@<3.0.0/dist-sdk/umd/index.js"></script>
 </head>
 
-<script type="text/javascript">
-	if ('VKIDSDK' in window) {
-		const VKID = window.VKIDSDK;
-		// const currentApiId = prompt("Введите VK apiId");
-
-		VKID.Config.init({
-			app: 52847556, // currentApiId
-			redirectUrl: 'https://yurikez.github.io',
-			responseMode: VKID.ConfigResponseMode.Callback,
-			source: VKID.ConfigSource.LOWCODE,
-			scope: 'photos', // Заполните нужными доступами по необходимости
-		});
-
-		console.log('init');
-
-		const oneTap = new VKID.OneTap();
-
-		oneTap.render({
-			container: document.currentScript.parentElement,
-			showAlternativeLogin: true
-		})
-			.on(VKID.WidgetEvents.ERROR, vkidOnError)
-			.on(VKID.OneTapInternalEvents.LOGIN_SUCCESS, function (payload) {
-				console.log('LOGIN_SUCCESS');
-				const code = payload.code;
-				const deviceId = payload.device_id;
-
-				VKID.Auth.exchangeCode(code, deviceId)
-					.then(vkidOnSuccess)
-					.catch(vkidOnError);
-			});
-
-		function vkidOnSuccess(data) {
-			console.log('vkidOnSuccess', data);
-			// Обработка полученного результата
-		}
-
-		function vkidOnError(error) {
-			console.log('vkidOnError', error);
-			// Обработка ошибки
-		}
-
-		function getPhotosAllComments() {
-			// const idGroup = prompt("Введите ID сообщества");
-			// const idAlbum = prompt("Введите ID альбома");
-			// 61085083_302122455
-			VK.Api.call('photos.getAllComments', { owner_id: 61085083, album_id: 302122455, v: "5.199" }, function (r) {
-				if (r.response) {
-					console.log(r.response);
-				}
-			});
-		}
-	}
-</script>
-
 <body>
 	<button type="button" onclick="getPhotosAllComments()">getPhotosAllComments</button>
+
+	<script type="text/javascript">
+		if ('VKIDSDK' in window) {
+			const VKID = window.VKIDSDK;
+			// const currentApiId = prompt("Введите VK apiId");
+
+			VKID.Config.init({
+				app: 52847556, // currentApiId
+				redirectUrl: 'https://yurikez.github.io',
+				responseMode: VKID.ConfigResponseMode.Callback,
+				source: VKID.ConfigSource.LOWCODE,
+				scope: 'photos', // Заполните нужными доступами по необходимости
+			});
+
+			console.log('init');
+
+			const floatingOneTap = new VKID.FloatingOneTap();
+
+			floatingOneTap.render({
+				appName: 'flowers',
+				showAlternativeLogin: true
+			})
+				.on(VKID.WidgetEvents.ERROR, vkidOnError)
+				.on(VKID.FloatingOneTapInternalEvents.LOGIN_SUCCESS, function (payload) {
+					const code = payload.code;
+					const deviceId = payload.device_id;
+
+					VKID.Auth.exchangeCode(code, deviceId)
+						.then(vkidOnSuccess)
+						.catch(vkidOnError);
+				});
+
+			function vkidOnSuccess(data) {
+				console.log('vkidOnSuccess', data);
+				// Обработка полученного результата
+			}
+
+			function vkidOnError(error) {
+				console.log('vkidOnError', error);
+				// Обработка ошибки
+			}
+
+			function getPhotosAllComments() {
+				// const idGroup = prompt("Введите ID сообщества");
+				// const idAlbum = prompt("Введите ID альбома");
+				// 61085083_302122455
+				VK.Api.call('photos.getAllComments', { owner_id: 61085083, album_id: 302122455, v: "5.199" }, function (r) {
+					if (r.response) {
+						console.log(r.response);
+					}
+				});
+			}
+		}
+	</script>
 </body>
 
 </html>
