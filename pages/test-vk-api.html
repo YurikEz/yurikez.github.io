@@ -15,15 +15,28 @@
 	<button type="button" onclick="getPhotosAllComments()">getPhotosAllComments</button>
 
 	<script type="text/javascript">
+		function makeid(length) {
+			let result = '';
+			const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+			const charactersLength = characters.length;
+			let counter = 0;
+			while (counter < length) {
+				result += characters.charAt(Math.floor(Math.random() * charactersLength));
+				counter += 1;
+			}
+			return result;
+		}
+
 		if ('VKIDSDK' in window) {
 			const VKID = window.VKIDSDK;
 			// const currentApiId = prompt("Введите VK apiId");
 
 			VKID.Config.init({
 				app: 52847556, // currentApiId
-				redirectUrl: 'https://yurikez.github.io/pages/test-vk-api.html',
+				redirectUrl: 'https://yurikez.github.io/pages/test-vk-api.htm',
 				responseMode: VKID.ConfigResponseMode.Callback,
 				source: VKID.ConfigSource.LOWCODE,
+				codeVerifier: makeid(10),
 				scope: 'photos', // Заполните нужными доступами по необходимости
 			});
 
