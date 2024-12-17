@@ -8,7 +8,7 @@
 	<title>TEST VK API</title>
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<!-- <script src="https://vk.com/js/api/openapi.js?169" type="text/javascript"></script> -->
-	<script src="https://unpkg.com/@vkid/sdk@<2.0.0/dist-sdk/umd/index.js"></script>
+	<script src="https://unpkg.com/@vkid/sdk@2.4.0/dist-sdk/umd/index.js"></script>
 </head>
 
 <body>
@@ -38,7 +38,7 @@
 				redirectUrl: 'https://yurikez.github.io/pages/test-vk-api.html',
 				responseMode: VKID.ConfigResponseMode.Callback,
 				source: VKID.ConfigSource.LOWCODE,
-				codeVerifier: codeVerifier,
+				// codeVerifier: codeVerifier,
 				state: 'flowers',
 				scope: 'photos', // Заполните нужными доступами по необходимости
 			});
