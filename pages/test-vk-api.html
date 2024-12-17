@@ -21,8 +21,10 @@
 			redirectUrl: 'https://yurikez.github.io',
 			responseMode: VKID.ConfigResponseMode.Callback,
 			source: VKID.ConfigSource.LOWCODE,
-			scope: '', // Заполните нужными доступами по необходимости
+			scope: 'photos', // Заполните нужными доступами по необходимости
 		});
+
+		console.log('init');
 
 		const oneTap = new VKID.OneTap();
 
@@ -32,6 +34,7 @@
 		})
 			.on(VKID.WidgetEvents.ERROR, vkidOnError)
 			.on(VKID.OneTapInternalEvents.LOGIN_SUCCESS, function (payload) {
+				console.log('LOGIN_SUCCESS');
 				const code = payload.code;
 				const deviceId = payload.device_id;
 
@@ -41,10 +44,12 @@
 			});
 
 		function vkidOnSuccess(data) {
+			console.log('vkidOnSuccess', data);
 			// Обработка полученного результата
 		}
 
 		function vkidOnError(error) {
+			console.log('vkidOnError', error);
 			// Обработка ошибки
 		}
 
