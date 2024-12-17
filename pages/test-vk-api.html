@@ -29,6 +29,8 @@
 
 		if ('VKIDSDK' in window) {
 			const VKID = window.VKIDSDK;
+			const codeVerifier = makeid(10);
+			console.log('codeVerifier', codeVerifier);
 			// const currentApiId = prompt("Введите VK apiId");
 
 			VKID.Config.init({
@@ -36,7 +38,8 @@
 				redirectUrl: 'https://yurikez.github.io/pages/test-vk-api.html',
 				responseMode: VKID.ConfigResponseMode.Callback,
 				source: VKID.ConfigSource.LOWCODE,
-				codeVerifier: makeid(10),
+				codeVerifier: codeVerifier,
+				state: 'flowers',
 				scope: 'photos', // Заполните нужными доступами по необходимости
 			});
 
